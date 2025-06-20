@@ -86,3 +86,14 @@ where:
 * `--pool_diversity_num_clusters` refers to the number of clusters we use for pool-based active learning with diversity sampling.
 * `--task` refers to which domain we are evaluating (content recommendation, moral reasoning, email validation).
 
+
+### Manual preference elicitation
+You can also act as the elicitation agent yourself while the language model simulates a human persona. This is useful for comparing your own questioning strategies to those produced by an LM.
+
+```bash
+python run_user_elicitation.py \
+    --engine <engine> \
+    --task [website_preferences|moral_reasoning|email_regex]
+```
+
+The script randomly selects a persona for the chosen task from `gpt_prompts/`. It lets you converse with the simulated human and reports evaluation metrics after each turn.
