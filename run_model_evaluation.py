@@ -81,12 +81,15 @@ def run_problem_instance(
     all_test_responses = update_test_responses([], test_responses)
 
     for i in tqdm(range(num_interactions)):
+        # Generates a query
         query = generative_al_agent.generate_active_query()
         if query is None:
             break
 
+        # Generates an answer to the query
         answer = generative_al_agent.generate_oracle_response(query)
 
+        # Writes the number of the interaction, the query, and the answer to the output file
         outputs_save_file.write(f"{i}. {query}\n{answer}\n\n")
         if not generative_al_agent.evaluate_condition():
             continue
@@ -119,6 +122,7 @@ def main(args):
         'correct_prob_relative', 'question_mode', 'task', 'engine', 'seed',
     ])
 
+    # Setup the question modes based on the task. Mostly testing open_ended here.
     if args.task == "website_preferences":
         question_modes = ["questions_open", "questions_yn", "edge_cases", "pool_diversity", "pool_random", "pool_uncertainty_logits"]
     else:

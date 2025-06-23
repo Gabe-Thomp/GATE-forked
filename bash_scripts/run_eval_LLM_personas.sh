@@ -3,10 +3,11 @@
 # === Set parameters here ===
 ENGINE="gpt-4"
 AGENT="questions"         # or edge_cases or pool
-EVAL_CONDITION="per_minute" # or per_minute or at_end
-POOL_CLUSTERS=1 
-TASK="email_regex" # moral_reasoning or email_regex or website_preferences
-NUM_INTERACTIONS=2
+EVAL_CONDITION="at_end" # or per_minute or at_end or per_turn
+POOL_CLUSTERS=-1 
+TASK="website_preferences" # moral_reasoning or email_regex or website_preferences
+NUM_INTERACTIONS=1
+
 
 # === Call Python script ===
 python run_model_evaluation.py \
