@@ -123,8 +123,8 @@ def main(args):
         'correct_prob_relative', 'question_mode', 'task', 'engine', 'seed',
     ])
 
-    if args.question_modes is not None and len(args.question_modes) > 0:
-        question_modes = args.question_modes
+    if args.question_modes is not None:
+        question_modes = [args.question_modes]
     elif args.task == "website_preferences":
         question_modes = [
             "questions_open",
@@ -142,10 +142,9 @@ def main(args):
     for question_mode in question_modes:
         avg_test_scores[question_mode] = {}
         print(question_mode)
-        question_type = "open"
+        # question_type = "open"
 
         for problem_instance_filename in tqdm(glob.glob(f"gpt_prompts/{args.task}/*.json")):
-
             agent_class = AGENT_NAME_TO_CLASS[question_mode.split("_")[0]]
             sampling_type = None
             if question_mode.split("_")[0] == "pool":
@@ -154,7 +153,7 @@ def main(args):
                 question_type = "_".join(question_mode.split("_")[1:])
 
             os.makedirs(f"model_model_results/{args.task}", exist_ok=True)
-            outputs_save_file = open(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{question_mode}.txt", "w")
+            outputs_save_file = open(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{question_mode}.txt", "a")
 
             test_xs, test_scores = run_problem_instance(
                 problem_instance_filename=problem_instance_filename, 
@@ -200,7 +199,7 @@ class ArgumentParser(Tap):
     no_cache: bool = False  # Whether to use the OpenAI cache file.
     seed: int = 0  # The random seed to use.
     temperature: float = 0.0  # The temperature to use for the model.
-    question_modes: Optional[List[str]] = None  # Question mode(s) to evaluate. Defaults depend on task.
+    question_modes: str = None  # Question mode(s) to evaluate. Defaults depend on task.
 
 
 if __name__ == '__main__':

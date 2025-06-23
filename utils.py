@@ -77,7 +77,7 @@ async def dispatch_openai_requests(
     # Do async API call for remaining uncached queries
     if "temperature" not in kwargs:
         kwargs["temperature"] = 0.0
-    if engine == "gpt-4" or engine == "gpt-3.5-turbo":
+    if parse_engine_type(engine):
         async_responses = [
             openai.ChatCompletion.acreate(
                 model=engine,
@@ -109,7 +109,7 @@ async def dispatch_openai_requests(
         # for message_cache_key in messages_to_responses:
         message_history_key = json.dumps(message_history)
         response = messages_to_responses[message_history_key]
-        if engine == "gpt-4" or engine == "gpt-3.5-turbo":
+        if parse_engine_type(engine):
             response_text = response['choices'][0]['message']['content']
             message_history_to_response_text[message_history_key] = response_text
             # message_history.append({'role': 'assistant', 'content': response_text})
@@ -138,7 +138,7 @@ def query_api(messages, engine, openai_cache=None, openai_cache_file=None, **kwa
     else:
         if "temperature" not in kwargs:
             kwargs["temperature"] = 0.0
-        if engine == "gpt-4" or engine == "gpt-3.5-turbo":
+        if parse_engine_type(engine):
             response = openai.ChatCompletion.create(
                 model=engine,
                 messages=messages,
@@ -151,7 +151,7 @@ def query_api(messages, engine, openai_cache=None, openai_cache_file=None, **kwa
                 **kwargs
             )
         save_openai_cache({messages_cache_key: response}, openai_cache, openai_cache_file)
-    if engine == "gpt-4" or engine == "gpt-3.5-turbo":
+    if parse_engine_type(engine):
         response_text = response['choices'][0]['message']['content']
         messages.append({'role': 'assistant', 'content': response_text})
     else:
@@ -245,3 +245,11 @@ def average_lines(lines, num_points=100):
     assert y_errors.shape[0] == y_values.shape[0]
     
     return average_line, y_errors
+
+def parse_engine_type(engine):
+    if engine == "gpt-4" or engine == "gpt-3.5-turbo" or engine == "gpt-4o":
+        return True
+    else: 
+        print(F"ENGINE {engine} USING OLD CHECKPOINT")
+        return False
+        
