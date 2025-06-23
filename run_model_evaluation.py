@@ -190,4 +190,5 @@ class ArgumentParser(Tap):
 
 if __name__ == '__main__':
     args = ArgumentParser().parse_args()
+    print(f"Running with args: {args}")
     main(args)
