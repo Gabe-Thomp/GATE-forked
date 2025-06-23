@@ -47,7 +47,7 @@ query_type_to_instruction = {
 }
 
 
-def initialize_agent_by_query_type(query_type, problem_instance_filename, pool_fp, pool_al_sampling_type, pool_diversity_num_clusters):
+def initialize_agent_by_query_type(query_type, problem_instance_filename, pool_fp, pool_al_sampling_type, pool_diversity_num_clusters, num_candidate_questions=1):
     question_type = "yn" if query_type == "Generative yes/no questions" else "open"
     if query_type == "Pool-based Active Learning":
         engine = "text-curie-001"
@@ -73,6 +73,7 @@ def initialize_agent_by_query_type(query_type, problem_instance_filename, pool_f
         pool_al_sampling_type=pool_al_sampling_type,
         pool_diversity_num_clusters=pool_diversity_num_clusters,
         temperature=temperature,
+        num_candidate_questions=num_candidate_questions,
     )
     
 
@@ -104,6 +105,7 @@ def load_prolific_id_info_from_file():
                         pool_fp=(prompt_type_to_prompt[prompt_type].get("full_data_path", None) if query_type == "Supervised Learning" else prompt_type_to_prompt[prompt_type].get("pool_data_path", None)),
                         pool_al_sampling_type=("random" if query_type == "Supervised Learning" else prompt_type_to_prompt[prompt_type].get("pool_al_sampling_type", None)),
                         pool_diversity_num_clusters=prompt_type_to_prompt[prompt_type].get("pool_diversity_num_clusters", None),
+                        num_candidate_questions=1,
                     ),
                 }
 
@@ -174,6 +176,7 @@ def get_next_prompt():
                 pool_fp=(prompt_type_to_prompt[prompt_type].get("full_data_path", None) if query_type == "Supervised Learning" else prompt_type_to_prompt[prompt_type].get("pool_data_path", None)),
                 pool_al_sampling_type=("random" if query_type == "Supervised Learning" else prompt_type_to_prompt[prompt_type].get("pool_al_sampling_type", None)),
                 pool_diversity_num_clusters=curr_prompt.get("pool_diversity_num_clusters", None),
+                num_candidate_questions=1,
             ),
         }
         experiment_type_to_prolific_id[curr_prompt_type][curr_query_type].append(prolific_id)

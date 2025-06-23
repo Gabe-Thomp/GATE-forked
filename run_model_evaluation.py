@@ -39,6 +39,7 @@ def run_problem_instance(
     num_interactions, agent_class, question_type, sampling_type,
     saved_interactions_file, temperature=0.0, outputs_save_file=None, base_query_type=None,
     pool_diversity_num_clusters=15, task=None, eval_condition="per_minute",
+    num_candidate_questions=1,
 ):
     '''Runs the generative active learning loop for a single problem instance.
     
@@ -61,6 +62,7 @@ def run_problem_instance(
         eval_condition=eval_condition, pool_al_sampling_type=sampling_type,
         pool_diversity_num_clusters=pool_diversity_num_clusters,
         temperature=temperature, base_query_type=base_query_type,
+        num_candidate_questions=num_candidate_questions,
     )
     
     if agent_class != FromSavedFileAgent:
@@ -168,6 +170,7 @@ def main(args):
                 saved_interactions_file=None,
                 outputs_save_file=outputs_save_file,
                 task=args.task,
+                num_candidate_questions=args.num_candidate_questions,
             )
             avg_test_scores[question_mode] = update_metrics(avg_test_scores[question_mode], test_scores)
 
@@ -200,6 +203,7 @@ class ArgumentParser(Tap):
     seed: int = 0  # The random seed to use.
     temperature: float = 0.0  # The temperature to use for the model.
     question_modes: str = None  # Question mode(s) to evaluate. Defaults depend on task.
+    num_candidate_questions: int = 1  # Number of candidate questions to generate before selecting the best one.
 
 
 if __name__ == '__main__':
