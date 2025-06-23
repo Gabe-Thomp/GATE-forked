@@ -1,5 +1,6 @@
 from copy import deepcopy
 import glob
+from typing import List, Optional
 
 import numpy as np
 from tap import Tap
@@ -122,9 +123,17 @@ def main(args):
         'correct_prob_relative', 'question_mode', 'task', 'engine', 'seed',
     ])
 
-    # Setup the question modes based on the task. Mostly testing open_ended here.
-    if args.task == "website_preferences":
-        question_modes = ["questions_open", "questions_yn", "edge_cases", "pool_diversity", "pool_random", "pool_uncertainty_logits"]
+    if args.question_modes is not None and len(args.question_modes) > 0:
+        question_modes = args.question_modes
+    elif args.task == "website_preferences":
+        question_modes = [
+            "questions_open",
+            "questions_yn",
+            "edge_cases",
+            "pool_diversity",
+            "pool_random",
+            "pool_uncertainty_logits",
+        ]
     else:
         question_modes = ["questions_open", "questions_yn", "edge_cases"]
     
@@ -133,6 +142,7 @@ def main(args):
     for question_mode in question_modes:
         avg_test_scores[question_mode] = {}
         print(question_mode)
+        question_type = "open"
 
         for problem_instance_filename in tqdm(glob.glob(f"gpt_prompts/{args.task}/*.json")):
 
@@ -190,6 +200,7 @@ class ArgumentParser(Tap):
     no_cache: bool = False  # Whether to use the OpenAI cache file.
     seed: int = 0  # The random seed to use.
     temperature: float = 0.0  # The temperature to use for the model.
+    question_modes: Optional[List[str]] = None  # Question mode(s) to evaluate. Defaults depend on task.
 
 
 if __name__ == '__main__':
