@@ -76,6 +76,7 @@ python run_model_evaluation.py \
     --agent [questions|edge_cases|pool] \
     --eval_condition [per_turn|per_minute|at_end] \
     --pool_diversity_num_clusters <pool_diversity_num_clusters> \
+    --question_modes <mode1> [mode2 ...] \
     --task [website_preferences|moral_reasoning|email_regex] \
 ```
 
@@ -85,6 +86,7 @@ where:
 * `--eval_condition` refers to how often we produce evaluate the intermediate results of each transcript, with `per_turn` meaning we evaluate the transcript after each turn, `per_minute` meaning we evaluate the transcript only after each minute of interaction, and `at_end` meaning we only evaluate the transcript at the very end.
 * `--pool_diversity_num_clusters` refers to the number of clusters we use for pool-based active learning with diversity sampling.
 * `--task` refers to which domain we are evaluating (content recommendation, moral reasoning, email validation).
+* `--question_modes` allows specifying which question modes to run (e.g. `questions_open`, `edge_cases`). If omitted, all modes for the task are evaluated.
 
 
 ### Manual preference elicitation
