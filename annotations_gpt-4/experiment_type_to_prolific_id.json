@@ -35,10 +35,12 @@
             "website_noninteractive"
         ],
         "Pool-based Active Learning": [
-            "website_pool_al"
+            "website_pool_al",
+            ""
         ],
         "Generative edge cases": [
-            "website_edge_case"
+            "website_edge_case",
+            "gathomp"
         ],
         "Generative yes/no questions": [
             "website_questions_yn"

@@ -1,0 +1,347 @@
+{
+  "prolific_id": "",
+  "engine": "gpt-4",
+  "query_type": "Pool-based Active Learning",
+  "prompt": {
+    "preamble": "We are testing a system for understanding people's interest in reading different kinds of online articles.\nFor example, you might be interested in articles about some topics, but not about others.",
+    "task_description": "your preferences of what kinds of online articles you would like to read",
+    "final": "In the final part of the study, you will give feedback on a test set of article headline and descriptions, which will enable us to see how well a chatbot reading your responses has learned what you like and dislike.",
+    "evaluation": "Please indicate whether you would like to read the following articles: \"yes\" if you would, \"no\" if you would not."
+  },
+  "conversation_history": [
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: 53 Top Stocking Stuffers That Will Fly Off Shelves This Year - All Under $25\nDescription: After you see all these gifts, you'll be dreaming about jumping into a pile of them."
+    },
+    {
+      "sender": "user",
+      "message": "Not at all. I don't like random stuff that is made of plastic.",
+      "time_spent_ms": 34820,
+      "display_time": 1750443964484,
+      "submission_time": 1750443999304
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: How millennials are changing banking\nDescription: How millennials changed banking"
+    },
+    {
+      "sender": "user",
+      "message": "Not really - I guess I am a bit young so personal finance doesn't interest me much.",
+      "time_spent_ms": 26561,
+      "display_time": 1750443999368,
+      "submission_time": 1750444025929
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: The Jose Cuervo Express Is Hosting A Special Day Of The Dead Train Ride With Tequila Tastings And Live Music\nDescription: All aboard!"
+    },
+    {
+      "sender": "user",
+      "message": "Not that much -- it seems like a random article",
+      "time_spent_ms": 16349,
+      "display_time": 1750444025987,
+      "submission_time": 1750444042336
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: 2019 Los Angeles Auto Show Preview\nDescription: Get ready for the 2019 Los Angeles Auto Show"
+    },
+    {
+      "sender": "user",
+      "message": "im not a huge car fan",
+      "time_spent_ms": 6006,
+      "display_time": 1750444042383,
+      "submission_time": 1750444048389
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Must-See Fashion Police Moments to Swoon Over This Week\nDescription: "
+    },
+    {
+      "sender": "user",
+      "message": "Not at all -- fashion police makes me very disinterested...",
+      "time_spent_ms": 19506,
+      "display_time": 1750444048495,
+      "submission_time": 1750444068001
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: MLS Cup Talking Points: The perfect ending\nDescription: The Seattle Freaking Sounders did it."
+    },
+    {
+      "sender": "user",
+      "message": "No -- i don't watch soccer or many sports",
+      "time_spent_ms": 11883,
+      "display_time": 1750444068157,
+      "submission_time": 1750444080040
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Vanna White hosts 'Wheel of Fortune' after Sajak has surgery\nDescription: LOS ANGELES (AP)   \"Wheel of Fortune\" host Pat Sajak had to have emergency surgery, and his longtime co-host Vanna White will fill in for him while he recovers. The show said in a statement that Thursday's taping was canceled as the 73-year-old Sajak underwent successful surgery to correct a blocked intestine. The 62-year-old White stepped in as host when taping resumed Friday for episodes that will air starting Dec. 9."
+    },
+    {
+      "sender": "user",
+      "message": "No",
+      "time_spent_ms": 8421,
+      "display_time": 1750444080086,
+      "submission_time": 1750444088507
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Winter's worst: history's most dramatic seasonal weather\nDescription: From deadly snowstorms to crippling floods, here's a look at history's most dramatic winter weather from around the globe."
+    },
+    {
+      "sender": "user",
+      "message": "I could read it but i wouldn't click on it",
+      "time_spent_ms": 15132,
+      "display_time": 1750444088634,
+      "submission_time": 1750444103766
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: The Super Rich Are Buying $100 Million Homes. For Some, One Isn't Enough.\nDescription: Since 2007, 20 homes have sold for once unthinkable nine-figure price tags, though many more have tried and failed."
+    },
+    {
+      "sender": "user",
+      "message": "maybe it would be interesting - it is a big problem nowadays",
+      "time_spent_ms": 18456,
+      "display_time": 1750444103819,
+      "submission_time": 1750444122275
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: What to Do After You've Cheated On Your Husband\nDescription: It's more common than you might think."
+    },
+    {
+      "sender": "user",
+      "message": "no",
+      "time_spent_ms": 4212,
+      "display_time": 1750444122322,
+      "submission_time": 1750444126534
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Time For Lunch! These Easy Recipes Are Good For Work, School, and Other Busy Weekdays\nDescription: If you're on the lookout for healthy, hearty, and satisfying lunches to bring to work, we rounded up the easiest recipes out there."
+    },
+    {
+      "sender": "user",
+      "message": "i would use this sometimes because i like to cook",
+      "time_spent_ms": 13864,
+      "display_time": 1750444126585,
+      "submission_time": 1750444140449
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: 17 Veterans Benefits You Don't Want to Miss\nDescription: Those who have served in the military are eligible for veterans benefits including home loans, pensions, small business assistance, medical help, and insurance. What's more, many of the benefits also extend to veterans' dependents and spouses. See what benefits and freebies could be yours."
+    },
+    {
+      "sender": "user",
+      "message": "no im not a veteran",
+      "time_spent_ms": 7545,
+      "display_time": 1750444140552,
+      "submission_time": 1750444148097
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Stephen Curry's broken hand shakes up the celebrity golf circuit\nDescription: The Golden State Warriors superstar sadly is going to miss some serious time on the basketball court and golf course."
+    },
+    {
+      "sender": "user",
+      "message": "i don't watch much sports",
+      "time_spent_ms": 8143,
+      "display_time": 1750444148235,
+      "submission_time": 1750444156378
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Microsoft wins Pentagon's $10 billion JEDI cloud contract, beating Amazon\nDescription: With its stunning win of a lucrative $10 billion Pentagon technology contract Friday, Microsoft Corp. not only beat Amazon.com Inc. but uprooted its larger rival as the federal government's go-to cloud-computing vendor."
+    },
+    {
+      "sender": "user",
+      "message": "this is pretty interesting actually",
+      "time_spent_ms": 24873,
+      "display_time": 1750444156529,
+      "submission_time": 1750444181402
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Fashion hits and misses from the 2019 Hollywood Film Awards\nDescription: Check out the best and worst fashion of the 2019 Hollywood Film Awards"
+    },
+    {
+      "sender": "user",
+      "message": "not at all",
+      "time_spent_ms": 5137,
+      "display_time": 1750444181516,
+      "submission_time": 1750444186653
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: 10 farm-fresh pickup trucks worth buying before values rise\nDescription: Pickup a bargain before it's too late\u2026"
+    },
+    {
+      "sender": "user",
+      "message": "no -- i am not buying a car currently",
+      "time_spent_ms": 9852,
+      "display_time": 1750444186701,
+      "submission_time": 1750444196553
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: How To Come Back From 10 Credit Horror Stories\nDescription: Don't let these credit problems happen to you."
+    },
+    {
+      "sender": "user",
+      "message": "no",
+      "time_spent_ms": 5196,
+      "display_time": 1750444196602,
+      "submission_time": 1750444201798
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Everything you need to know about natural wine this holiday season\nDescription: Although it's wine season, year-round, the holidays are the perfect time to try something different, and that's where natural wines come in. The natural wines category is growing pretty rapidly, and if you haven't gotten into the craze, now is the perfect time to join team natural wine. As a huge wino, I was curious to explore the world of natural wines. I spoke with natural wines expert and beverage director at Faro, Siobhan Spencer, all about..."
+    },
+    {
+      "sender": "user",
+      "message": "not really i don't drink much",
+      "time_spent_ms": 16753,
+      "display_time": 1750444201852,
+      "submission_time": 1750444218605
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: The 9 most mind-blowing concept cars of the past decade\nDescription: With their futuristic designs, mind-blowing technology, and brilliant engineering, concept cars are one of the most exciting parts of the automotive industry. Fortunately, the 2010s featured a wide array of these dreamy vehicles that catered to every type of car lover out there. From luxury automakers like Mercedes-Benz, Audi, BMW, and Aston Martin came some of the most breathtaking concepts to ever hit the auto-show stages. Even Toyota debuted a sports car we can't believe will never reach production. Out of everything the 2010s brought us, though, we've narrowed it down to nine that we feel were the coolest concepts of the decade."
+    },
+    {
+      "sender": "user",
+      "message": "i do like to look at concept cars ",
+      "time_spent_ms": 10435,
+      "display_time": 1750444218689,
+      "submission_time": 1750444229124
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: See All the Best Looks From the 2019 People's Choice Awards\nDescription: From Zendaya to the Kardashians."
+    },
+    {
+      "sender": "user",
+      "message": "not at all",
+      "time_spent_ms": 4341,
+      "display_time": 1750444229223,
+      "submission_time": 1750444233564
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Central Arkansas vs. Duke Men's Basketball Highlights (2019-20)\nDescription: -"
+    },
+    {
+      "sender": "user",
+      "message": "no",
+      "time_spent_ms": 2701,
+      "display_time": 1750444233672,
+      "submission_time": 1750444236373
+    },
+    {
+      "sender": "assistant",
+      "message": "Are you interested in the following article? Website: msn.com\nTitle: Kelly Ripa Channeled 'Old Town Road' for Halloween\nDescription: Halloween is not just for kids. Some beloved television hosts got into the spirit this holiday and dressed up in some iconic outfits. Ellen kicked things off on Wednesday as she was makin' money moves dressed as Cardi B, but she called herself \"Cardi E.\" The Bronx rapper even surprised the daytime host for a meta meeting of the minds. The \"Good Morning America\" hosts hustled it all the way back to the 1970s as they channeled the beloved disco era of New York City and the heyday of Studio 54."
+    },
+    {
+      "sender": "user",
+      "message": "no",
+      "time_spent_ms": 72176,
+      "display_time": 1750444236413,
+      "submission_time": 1750444308589
+    }
+  ],
+  "evaluation_results": [
+    {
+      "sample": "Website Name: New York Times\nTitle: In Norway, the Electric Vehicle Future Has Already Arrived\nDescription: About 80 percent of new cars sold in Norway are battery-powered. As a result, the air is cleaner, the streets are quieter and the grid hasn\u2019t collapsed. But problems with unreliable chargers persist.",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: TIME Magazine\nTitle: Two Coronations, 70 Years Apart\nDescription: The Visual Parallels Between Elizabeth II and Charles III's Coronations",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: The Atlantic\nTitle: What Does Sentience Really Mean?\nDescription: The fact that AI isn\u2019t alive doesn\u2019t mean it can\u2019t be sentient, the sociologist Jacy Reese Anthis argues.",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Bon Appetit\nTitle: Bon Appetit's Best Banana Bread Recipe\nDescription: After baking 14 loaves, we aligned on this tender, ultra-moist banana bread as our collective favorite.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: National Geographic\nTitle: There\u2019s a new way to tour the Amazon rainforest: by crane\nDescription: Canopy cranes, once reserved for treetop research, let you see the \u201ceighth continent\u201d like an arbornaut.",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Travel and Leisure\nTitle: These Airlines Have the Most Luxurious Economy Seats\nDescription: You can find good Champagne, amenity kits, hot towel service, and wider seats in the economy cabin \u2014 if you know where to look.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Popular Science\nTitle: The right amount of online scrolling could decrease your risk of dementia\nDescription: A new demographic survey indicates a potential link between regular internet usage and cognitive health in older populations.",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Rolling Stone\nTitle: All of Nintendo\u2019s Zelda Games, Ranked\nDescription: From NES to Switch, our picks for the best legends in the 35-year-old iconic adventure saga.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Sports Illustrated\nTitle: 2024 NFL Draft: The Six Players Fans Need to Know, Including Caleb Williams\nDescription: Quarterbacks will dominate the top 10, but the son of a former Hall of Fame receiver will be picked in the top five, too, along with another dominant Alabama defensive player.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Architectural Digest\nTitle: Hang On, Is Artificial Grass Actually Chic?\nDescription: Designers discuss why faux lawns are more popular than you think.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Esquire\nTitle:The Best Summer Songs of 2023\nDescription: A sunny mix of 10 hits to carry you through the season.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Sunset Magazine\nTitle: 31 Perfect Recipes for Mother\u2019s Day Brunch.\nDescription:Make mom\u2019s day extra-special with an elegant homemade brunch. We\u2019ve got your menu covered, from mains to drinks to dessert.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Vogue\nTitle: 40 Minimalist Earrings to Wear Now and Forever\nDescription: From classic hoops to sculptural drops, these are the earrings you\u2019ll never want to take off.",
+      "label": "no",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Runner's World\nTitle: How to Prevent Running Injuries Before They Sideline You\nDescription: All the tips you need to keep running strong, including strength and mobility moves.",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Forbes\nTitle: Killing It\nDescription: How Two Failed Entrepreneurs Suddenly Began Making Millions Selling Murder Mysteries",
+      "label": "yes",
+      "explanation": ""
+    },
+    {
+      "sample": "Website Name: Tricycle: The Buddhist Review\nTitle: Why We Look for Happiness in the Wrong Places\nDescription: Meditation teacher Sharon Salzberg discusses how our yearning for happiness can support us in our journey toward freedom\u2014and why we tend to search for it in the wrong places.",
+      "label": "yes",
+      "explanation": ""
+    }
+  ],
+  "feedback": {
+    "feedback_challenge": "4",
+    "feedback_new_issues_interaction": "4",
+    "feedback_interaction_coverage_pretest": "4",
+    "feedback_interaction_coverage_posttest": "4",
+    "feedback_testcase_use_history": "4",
+    "feedback_lm_experience": "4",
+    "feedback_other": ""
+  },
+  "query_prompt": "pool_diversity"
+}
