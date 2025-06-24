@@ -6,7 +6,7 @@ AGENT="questions"         # or edge_cases or pool
 EVAL_CONDITION="at_end" # or per_minute or at_end or per_turn
 POOL_CLUSTERS=-1 
 TASK="website_preferences" # moral_reasoning or email_regex or website_preferences
-NUM_INTERACTIONS=5
+NUM_INTERACTIONS=1
 QUESTION_MODES="questions_open"
 
 # === Call Python script ===
