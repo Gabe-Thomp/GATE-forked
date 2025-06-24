@@ -38,7 +38,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
         print(hypothesis_prompt)
         return [{"role": "user", "content": hypothesis_prompt}]
 
-    def get_question_prompt(self, task_description, question_type, implementation, interaction_history, num_questions=1):
+    def get_question_prompt(self, task_description, question_type, implementation, interaction_history, num_candidate_questions=1):
         if question_type == "yn":
             question_type_insert = "yes/no question"
         elif question_type == "open":
@@ -46,7 +46,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
         else:
             raise ValueError(f"Invalid question type: {question_type}")
 
-        if num_questions == 1:
+        if num_candidate_questions == 1:
             question_prompt = textwrap.dedent('''\
                 Your task is to {task_description}.
 
@@ -68,14 +68,14 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
                 Previous questions:
                 {interaction_history}
 
-                Generate {num_questions} candidate {question_type_insert}s that, when answered, will reveal the most about the desired behavior beyond what has already been queried for above. Make sure each question addresses different aspects of the {implementation} than the questions that have already been asked. Keep each question short. {additional_prompt}List each question on a new line and nothing else:'''
+                Generate {num_candidate_questions} candidate {question_type_insert}s that, when answered, will reveal the most about the desired behavior beyond what has already been queried for above. Make sure each question addresses different aspects of the {implementation} than the questions that have already been asked. Keep each question short. {additional_prompt}List each question on a new line and nothing else:'''
             ).format(
                 implementation=implementation,
                 task_description=task_description,
                 additional_prompt=getattr(self, "additional_query_note", ""),
                 question_type_insert=question_type_insert,
                 interaction_history=self.format_questions_and_answers(interaction_history),
-                num_questions=num_questions,
+                num_candidate_questions=num_candidate_questions,
             )
         print(question_prompt)
         print("===")
@@ -88,7 +88,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
             self.question_type,
             self.implementation,
             [["[Q]", "[A]"]],
-            num_questions=self.num_candidate_questions,
+            num_candidate_questions=self.num_candidate_questions,
         )
 
     def generate_active_query(self):
@@ -98,7 +98,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
             self.question_type,
             self.implementation,
             self.interaction_history,
-            num_questions=self.num_candidate_questions,
+            num_candidate_questions=self.num_candidate_questions,
         )
         questions_text, _ = query_api(
             question_prompt,
@@ -120,6 +120,8 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
             f"{idx+1}. {q}" for idx, q in enumerate(candidate_questions)
         )
         choose_prompt_text = textwrap.dedent('''\
+            Your task is to {task_description}.
+            
             Previous questions and answers:
             {interaction_history}
 
@@ -130,6 +132,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
         ).format(
             interaction_history=self.format_questions_and_answers(self.interaction_history),
             candidates=formatted_candidates,
+            task_description=self.task_description,
         )
         choose_prompt = [{"role": "user", "content": choose_prompt_text}]
         best_question, _ = query_api(
@@ -141,6 +144,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
         )
         best_question = best_question.strip().split("\n")[0]
         best_question = re.sub(r'^[-\d.\)\s]*', '', best_question).strip()
+        # breakpoint()
         return best_question
        
     def generate_oracle_response(self, question):
