@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Set parameters here ===
-ENGINE="gpt-4o"
+ENGINE="gpt-4"
 AGENT="questions"         # or edge_cases or pool
 EVAL_CONDITION="at_end" # or per_minute or at_end or per_turn
 POOL_CLUSTERS=-1 
