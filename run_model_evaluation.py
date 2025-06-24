@@ -153,7 +153,10 @@ def main(args):
                 question_type = "_".join(question_mode.split("_")[1:])
 
             os.makedirs(f"model_model_results/{args.task}", exist_ok=True)
-            outputs_save_file = open(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{question_mode}.txt", "a")
+            if args.write_filename is not None:
+                outputs_save_file = open(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{question_mode}_{args.write_filename}.txt", "a")
+            else:
+                outputs_save_file = open(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{question_mode}.txt", "a")
 
             test_xs, test_scores = run_problem_instance(
                 problem_instance_filename=problem_instance_filename, 
@@ -187,7 +190,10 @@ def main(args):
             print(f'Avg. test {metric}s across training:', avg_test_scores[question_mode][metric])
     
     os.makedirs(f"model_model_results/{args.task}", exist_ok=True)
-    all_test_results.to_csv(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_all_test_results.csv")
+    if args.write_filename is not None:
+        all_test_results.to_csv(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}_{args.write_filename}.csv")
+    else:
+        all_test_results.to_csv(f"model_model_results/{args.task}/{args.engine}_{args.eval_condition}_{args.seed}.csv")
 
 
 class ArgumentParser(Tap):
@@ -202,6 +208,7 @@ class ArgumentParser(Tap):
     temperature: float = 0.0  # The temperature to use for the model.
     question_modes: str = None  # Question mode(s) to evaluate. Defaults depend on task.
     num_candidate_questions: int = 1  # Number of candidate questions to generate.
+    write_filename: str = None  # Prefix for output files.
 
 
 if __name__ == '__main__':
