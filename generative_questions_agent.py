@@ -68,7 +68,7 @@ class GenerativeQuestionsAgent(BaseActiveLearningAgent):
                 Previous questions:
                 {interaction_history}
 
-                Generate {num_candidate_questions} candidate {question_type_insert}s that, when answered, will reveal the most about the desired behavior beyond what has already been queried for above. Make sure each question addresses different aspects of the {implementation} than the questions that have already been asked. Keep each question short. {additional_prompt}List each question on a new line and nothing else:'''
+                Generate {num_candidate_questions} candidate {question_type_insert}s that, when answered, will reveal the most about the desired behavior beyond what has already been queried for above. Make sure each question addresses different aspects of the {implementation} than the questions that have already been asked. At the same time however, the question should be bite-sized, and not ask for too much at once. {additional_prompt}List each question on a new line and nothing else:'''
             ).format(
                 implementation=implementation,
                 task_description=task_description,
