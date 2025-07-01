@@ -1,5 +1,6 @@
 {
     "persona": "Suppose you are this person:\nEducation: Medical Doctorate\nOccupation: Junior Surgeon at a regional hospital\nHobbies: Running marathons, traveling, and learning new languages.\n\nAnswer the following questions about your interests from the perspective of this person. Assume you do not have any interests other than those presented here.",
+    "yes_no_append": "Answer questions only in the format \"yes\" or \"no\".",
     "task_description": "learn what topics a user is interested in reading online article about. People's interests are broad, so you should seek to understand their interests across many topics; in other words, go for breadth rather than depth. Do not assume a user has given a complete answer to any question, so make sure to keep probing different types of interests",
     "pool_al_prompt": [
         "A user has a particular set of preferences over what articles they would like to read. Based on these preferences, the user has specified whether they are interested in reading following articles.",
