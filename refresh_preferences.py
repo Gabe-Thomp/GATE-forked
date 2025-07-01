@@ -11,7 +11,7 @@ DEFAULT_PROMPT = "Are you interested in the following article?\n{article}"
 
 
 def run_profile(profile_path, engine, cache, cache_file):
-    with open(profile_path, "r") as f:
+    with open(profile_path, "r", encoding="utf-8") as f:
         # Load the profile JSON file
         data = json.load(f)
     
@@ -35,10 +35,10 @@ def run_profile(profile_path, engine, cache, cache_file):
         response_map = {"yes": True, "no": False}
         response = response_map[response.strip().lower()]
         # Changing the boolean evaluation from the LM 
-        data["test_cases"][i] = [data["test_cases"][i][0], response]
+        data["test_cases"][i][1] = response
         print(f"\nPrompt: {prompt}\nResponse: {response}")
     
-    with open(profile_path, "w") as f:
+    with open(profile_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
     
 

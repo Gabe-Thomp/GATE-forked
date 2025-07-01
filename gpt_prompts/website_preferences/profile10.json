@@ -15,7 +15,7 @@
     "implementation": "user's interests",
     "test_cases": [
         [
-            "Website Name: New York Times\nTitle: In Norway, the Electric Vehicle Future Has Already Arrived\nDescription: About 80 percent of new cars sold in Norway are battery-powered. As a result, the air is cleaner, the streets are quieter and the grid hasn’t collapsed. But problems with unreliable chargers persist.",
+            "Website Name: New York Times\nTitle: In Norway, the Electric Vehicle Future Has Already Arrived\nDescription: About 80 percent of new cars sold in Norway are battery-powered. As a result, the air is cleaner, the streets are quieter and the grid hasn't collapsed. But problems with unreliable chargers persist.",
             false
         ],
         [
@@ -23,7 +23,7 @@
             false
         ],
         [
-            "Website Name: The Atlantic\nTitle: What Does Sentience Really Mean?\nDescription: The fact that AI isn’t alive doesn’t mean it can’t be sentient, the sociologist Jacy Reese Anthis argues.",
+            "Website Name: The Atlantic\nTitle: What Does Sentience Really Mean?\nDescription: The fact that AI isn't alive doesn't mean it can't be sentient, the sociologist Jacy Reese Anthis argues.",
             false
         ],
         [
@@ -31,11 +31,11 @@
             false
         ],
         [
-            "Website Name: National Geographic\nTitle: There’s a new way to tour the Amazon rainforest: by crane\nDescription: Canopy cranes, once reserved for treetop research, let you see the “eighth continent” like an arbornaut.",
+            "Website Name: National Geographic\nTitle: There's a new way to tour the Amazon rainforest: by crane\nDescription: Canopy cranes, once reserved for treetop research, let you see the \"eighth continent\" like an arbornaut.",
             false
         ],
         [
-            "Website Name: Travel and Leisure\nTitle: These Airlines Have the Most Luxurious Economy Seats\nDescription: You can find good Champagne, amenity kits, hot towel service, and wider seats in the economy cabin — if you know where to look.",
+            "Website Name: Travel and Leisure\nTitle: These Airlines Have the Most Luxurious Economy Seats\nDescription: You can find good Champagne, amenity kits, hot towel service, and wider seats in the economy cabin - if you know where to look.",
             false
         ],
         [
@@ -43,7 +43,7 @@
             false
         ],
         [
-            "Website Name: Rolling Stone\nTitle: All of Nintendo’s Zelda Games, Ranked\nDescription: From NES to Switch, our picks for the best legends in the 35-year-old iconic adventure saga.",
+            "Website Name: Rolling Stone\nTitle: All of Nintendo's Zelda Games, Ranked\nDescription: From NES to Switch, our picks for the best legends in the 35-year-old iconic adventure saga.",
             false
         ],
         [
@@ -59,11 +59,11 @@
             false
         ],
         [
-            "Website Name: Sunset Magazine\nTitle: 31 Perfect Recipes for Mother’s Day Brunch.\nDescription: Make mom’s day extra-special with an elegant homemade brunch. We’ve got your menu covered, from mains to drinks to dessert.",
+            "Website Name: Sunset Magazine\nTitle: 31 Perfect Recipes for Mother's Day Brunch.\nDescription: Make mom's day extra-special with an elegant homemade brunch. We've got your menu covered, from mains to drinks to dessert.",
             false
         ],
         [
-            "Website Name: Vogue\nTitle: 40 Minimalist Earrings to Wear Now and Forever\nDescription: From classic hoops to sculptural drops, these are the earrings you’ll never want to take off.",
+            "Website Name: Vogue\nTitle: 40 Minimalist Earrings to Wear Now and Forever\nDescription: From classic hoops to sculptural drops, these are the earrings you'll never want to take off.",
             false
         ],
         [
@@ -75,7 +75,7 @@
             false
         ],
         [
-            "Website Name: Tricycle: The Buddhist Review\nTitle: Why We Look for Happiness in the Wrong Places\nDescription: Meditation teacher Sharon Salzberg discusses how our yearning for happiness can support us in our journey toward freedom—and why we tend to search for it in the wrong places.",
+            "Website Name: Tricycle: The Buddhist Review\nTitle: Why We Look for Happiness in the Wrong Places\nDescription: Meditation teacher Sharon Salzberg discusses how our yearning for happiness can support us in our journey toward freedom-and why we tend to search for it in the wrong places.",
             false
         ]
     ],
