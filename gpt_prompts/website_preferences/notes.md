@@ -1,0 +1,1 @@
+Note: Profiles 1-5 are from the original GATE code. Profiles 6-10 are new additions where I prompt GPT-4 for answers given the profile with `refresh_preferences.py`. Check the google docs for more info.

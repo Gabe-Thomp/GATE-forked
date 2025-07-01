@@ -48,7 +48,6 @@ def main():
     parser.add_argument("--engine", default="gpt-4", help="OpenAI model")
     parser.add_argument("--cache_file", default="openai_cache.jsonl", help="Path to OpenAI cache file")
     parser.add_argument("--profiles_glob", default="gpt_prompts/website_preferences/profile*.json", help="Glob pattern for profile files")
-    parser.add_argument("--output_file", default="website_preferences_answers.json", help="Where to write responses")
     args = parser.parse_args()
 
     cache = load_openai_cache(args.cache_file)

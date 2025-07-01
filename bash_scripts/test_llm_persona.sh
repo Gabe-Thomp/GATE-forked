@@ -8,8 +8,8 @@ POOL_CLUSTERS=-1
 TASK="website_preferences" # moral_reasoning or email_regex or website_preferences
 NUM_INTERACTIONS=5
 QUESTION_MODES="questions_open"
-NUM_CANDIDATE_QUESTIONS=10
-WRITE_FILENAME="10_candidate"
+NUM_CANDIDATE_QUESTIONS=1
+WRITE_FILENAME="new_profiles_07_01_2025"
 
 # === Call Python script ===
 python run_model_evaluation.py \

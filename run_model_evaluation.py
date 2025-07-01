@@ -73,7 +73,9 @@ def run_problem_instance(
     else:
         query_type = FILE_QUERY_TYPE_TO_NAME[base_query_type]
 
+    # Computes the features for interaction
     test_xs = generative_al_agent.get_interaction_features()
+    # Scores on the included test cases
     test_score, test_responses = generative_al_agent.score_test_cases()
     print(test_score)
     all_test_xs = update_metrics({}, test_xs)
@@ -109,7 +111,6 @@ def run_problem_instance(
     outputs_save_file.write(f"===TEST RESPONSES===\n{json.dumps(all_test_responses, indent=2)}\n\n")
     
     return all_test_xs, test_scores
-
 
 def main(args):
     if args.no_cache:
