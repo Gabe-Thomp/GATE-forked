@@ -7,6 +7,7 @@ from tap import Tap
 
 from generative_questions_agent import GenerativeQuestionsAgent
 from generative_edge_cases_agent import GenerativeEdgeCasesAgent
+from mental_model import MentalModel
 from from_saved_file_agent import FromSavedFileAgent
 from pool_based_agent import PoolBasedAgent
 import os
@@ -18,6 +19,7 @@ import pandas as pd
 
 AGENT_NAME_TO_CLASS = {
     "questions": GenerativeQuestionsAgent,
+    "questionsmm": MentalModel,
     "edge": GenerativeEdgeCasesAgent,
     "saved": FromSavedFileAgent,
     "pool": PoolBasedAgent,
@@ -92,6 +94,8 @@ def run_problem_instance(
         # Generates an answer to the query
         answer = generative_al_agent.generate_oracle_response(query)
 
+        
+
         # Writes the number of the interaction, the query, and the answer to the output file
         outputs_save_file.write(f"{i}. {query}\n{answer}\n\n")
         if not generative_al_agent.evaluate_condition():
@@ -150,7 +154,8 @@ def main(args):
             sampling_type = None
             if question_mode.split("_")[0] == "pool":
                 sampling_type = "_".join(question_mode.split("_")[1:])
-            elif question_mode.split("_")[0] == "questions":
+            # Allow for question mode to be "questionsmm", eg, for mental model
+            elif "questions" in question_mode.split("_")[0]:
                 question_type = "_".join(question_mode.split("_")[1:])
 
             os.makedirs(f"model_model_results/{args.task}", exist_ok=True)

@@ -1,9 +1,7 @@
 {
-    "persona": "Suppose you are this person:\nEducation: Medical Doctorate\nOccupation: Junior Surgeon at a regional hospital\nHobbies: Running marathons, traveling, and learning new languages.\n\nAnswer the following questions about your interests from the perspective of this person. Assume you do not have any interests other than those presented here.",
+    "persona": "Suppose you are this person:\nEducation: Masters in Finance\nOccupation: Financial Analyst at an international bank\nHobbies: Playing football, weekend hiking and camping trips, and cooking different cuisines.\n\nAnswer the following questions about your interests from the perspective of this person. Assume you do not have any interests other than those presented here.",
     "yes_no_append": "Answer questions only in the format \"yes\" or \"no\".",
     "task_description": "learn what topics a user is interested in reading online article about. People's interests are broad, so you should seek to understand their interests across many topics; in other words, go for breadth rather than depth. Do not assume a user has given a complete answer to any question, so make sure to keep probing different types of interests",
-    "task_description_mental_model": "learn what topics a user is interested in reading online article about",
-    "task_description_mental_model_append": "You are provided an explicit, running mental model of the user, which you should consider when deciding which further questions to ask.",
     "pool_al_prompt": [
         "A user has a particular set of preferences over what articles they would like to read. Based on these preferences, the user has specified whether they are interested in reading following articles.",
         "Based on these preferences, would the user be interested in reading the following article? Only answer \"yes\" or \"no\". If uncertain, please make your best guess."
@@ -30,7 +28,7 @@
         ],
         [
             "Website Name: Bon Appetit\nTitle: Bon Appetit's Best Banana Bread Recipe\nDescription: After baking 14 loaves, we aligned on this tender, ultra-moist banana bread as our collective favorite.",
-            false
+            true
         ],
         [
             "Website Name: National Geographic\nTitle: There’s a new way to tour the Amazon rainforest: by crane\nDescription: Canopy cranes, once reserved for treetop research, let you see the “eighth continent” like an arbornaut.",
@@ -50,7 +48,7 @@
         ],
         [
             "Website Name: Sports Illustrated\nTitle: 2024 NFL Draft: The Six Players Fans Need to Know, Including Caleb Williams\nDescription: Quarterbacks will dominate the top 10, but the son of a former Hall of Fame receiver will be picked in the top five, too, along with another dominant Alabama defensive player.",
-            false
+            true
         ],
         [
             "Website Name: Architectural Digest\nTitle: Hang On, Is Artificial Grass Actually Chic?\nDescription: Designers discuss why faux lawns are more popular than you think.",
@@ -62,7 +60,7 @@
         ],
         [
             "Website Name: Sunset Magazine\nTitle: 31 Perfect Recipes for Mother’s Day Brunch.\nDescription: Make mom’s day extra-special with an elegant homemade brunch. We’ve got your menu covered, from mains to drinks to dessert.",
-            false
+            true
         ],
         [
             "Website Name: Vogue\nTitle: 40 Minimalist Earrings to Wear Now and Forever\nDescription: From classic hoops to sculptural drops, these are the earrings you’ll never want to take off.",
@@ -70,15 +68,15 @@
         ],
         [
             "Website Name: Runner's World\nTitle: How to Prevent Running Injuries Before They Sideline You\nDescription: All the tips you need to keep running strong, including strength and mobility moves.",
-            true
-        ],
-        [
-            "Website Name: Forbes\nTitle: Killing It\nDescription: How Two Failed Entrepreneurs Suddenly Began Making Millions Selling Murder Mysteries",
             false
         ],
         [
-            "Website Name: Tricycle: The Buddhist Review\nTitle: Why We Look for Happiness in the Wrong Places\nDescription: Meditation teacher Sharon Salzberg discusses how our yearning for happiness can support us in our journey toward freedom—and why we tend to search for it in the wrong places.",
+            "Website Name: Forbes\nTitle: Killing It\nDescription: How Two Failed Entrepreneurs Suddenly Began Making Millions Selling Murder Mysteries",
             true
+        ],
+        [
+            "Website Name: Tricycle: The Buddhist Review\nTitle: Why We Look for Happiness in the Wrong Places\nDescription: Meditation teacher Sharon Salzberg discusses how our yearning for happiness can support us in our journey toward freedom—and why we tend to search for it in the wrong places.",
+            false
         ]
     ],
     "pool_data_path": "pool_al_data/website_preferences_subsample.jsonl",

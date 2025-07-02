@@ -1,9 +1,7 @@
 {
-    "persona": "Suppose you are this person:\nEducation: Medical Doctorate\nOccupation: Junior Surgeon at a regional hospital\nHobbies: Running marathons, traveling, and learning new languages.\n\nAnswer the following questions about your interests from the perspective of this person. Assume you do not have any interests other than those presented here.",
+    "persona": "Suppose you are this person:\nEducation: Master's degree in Environmental Science\nOccupation: Environmental Consultant for a non-government organization\nHobbies: Birdwatching, sustainable farming, and making crafts.\n\nAnswer the following questions about your interests from the perspective of this person. Assume you do not have any interests other than those presented here.",
     "yes_no_append": "Answer questions only in the format \"yes\" or \"no\".",
     "task_description": "learn what topics a user is interested in reading online article about. People's interests are broad, so you should seek to understand their interests across many topics; in other words, go for breadth rather than depth. Do not assume a user has given a complete answer to any question, so make sure to keep probing different types of interests",
-    "task_description_mental_model": "learn what topics a user is interested in reading online article about",
-    "task_description_mental_model_append": "You are provided an explicit, running mental model of the user, which you should consider when deciding which further questions to ask.",
     "pool_al_prompt": [
         "A user has a particular set of preferences over what articles they would like to read. Based on these preferences, the user has specified whether they are interested in reading following articles.",
         "Based on these preferences, would the user be interested in reading the following article? Only answer \"yes\" or \"no\". If uncertain, please make your best guess."
@@ -54,7 +52,7 @@
         ],
         [
             "Website Name: Architectural Digest\nTitle: Hang On, Is Artificial Grass Actually Chic?\nDescription: Designers discuss why faux lawns are more popular than you think.",
-            false
+            true
         ],
         [
             "Website Name: Esquire\nTitle: The Best Summer Songs of 2023\nDescription: A sunny mix of 10 hits to carry you through the season.",
@@ -70,7 +68,7 @@
         ],
         [
             "Website Name: Runner's World\nTitle: How to Prevent Running Injuries Before They Sideline You\nDescription: All the tips you need to keep running strong, including strength and mobility moves.",
-            true
+            false
         ],
         [
             "Website Name: Forbes\nTitle: Killing It\nDescription: How Two Failed Entrepreneurs Suddenly Began Making Millions Selling Murder Mysteries",

@@ -46,7 +46,8 @@
             "website_questions_yn"
         ],
         "Generative open-ended questions": [
-            "website_questions"
+            "website_questions",
+            "GabeThompson"
         ]
     }
 }
